@@ -9,14 +9,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    hermite.cpp \
+    lagrange.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    nevill.cpp
 
 HEADERS += \
     Interval.h \
-    hermite.h \
-    mainwindow.h
+    lagrange.h \
+    mainwindow.h \
+    nevill.h
 
 FORMS += \
     mainwindow.ui
@@ -25,7 +27,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
 LIBS +=  -lboost_system -lboost_filesystem -lboost_program_options
 LIBS += -lmpfr
-
-
